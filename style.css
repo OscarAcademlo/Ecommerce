@@ -438,17 +438,7 @@ section{
 .img_col{
     width: 50px;
 }
-.comprar{
-    background-color: #E94959;
-    position: absolute;
-    top:600px;
-    right: 92px;
-    width: 100px;
-    height: 50px;
-}
-.comprar:hover{
-    background: white;
-}
+
 
 @media(max-width:1000px){
 

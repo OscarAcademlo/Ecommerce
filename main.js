@@ -2,21 +2,21 @@ const tarjetas = [
     {
         id: 1,
         titulo: "Hoodies",
-        stock: 9,
+        stock: 10,
         price:14,
         imagen:"./img/featured1.png",
     },
     {
         id: 2,
         titulo: "Shirts",
-        stock: 15,
+        stock: 20,
         price:24,
         imagen:"./img/featured2.png",
     },
     {
         id: 3,
         titulo: "Sweatshirts",
-        stock: 19,
+        stock: 30,
         price:36,
         imagen:"./img/featured3.png",
     },
@@ -173,7 +173,7 @@ const fragment = document.createDocumentFragment()
 let carrito={};
 tarjetasContenedor.addEventListener("click", function(e){
     if (e.target.classList.contains("agregar__btn")) {
-       // console.log(e.target.parentElement);
+        console.log(e.target.parentElement);
         setCarrito(e.target.parentElement);        
     }
     e.stopPropagation()
@@ -208,8 +208,7 @@ items.addEventListener('click',function(e){
             templateCarrito.querySelector('span').textContent= parseInt(producto.cantidad)*parseInt(producto.price,10) 
             templateCarrito.querySelector('.btn-info').dataset.id=producto.id
             templateCarrito.querySelector('.btn-danger').dataset.id=producto.id
-            //templateCarrito.querySelector('.comprar').dataset.id=producto.id
-
+            
 
             const clone = templateCarrito.cloneNode(true);
             fragment.appendChild(clone)
@@ -237,13 +236,11 @@ items.addEventListener('click',function(e){
  let conteoTotal = function(){
     document.querySelector('.total_prod').textContent=nCantidad;
  }   
- 
-
  conteoTotal();        
 
 
 //VACIAR CARRITO
-        const btnVaciar = document.getElementById('vaciar-carrito, ')
+        const btnVaciar = document.getElementById('vaciar-carrito')
         btnVaciar.addEventListener('click',function(){
             carrito={}
             pintarCarrito();
@@ -271,15 +268,7 @@ items.addEventListener('click',function(e){
             }
             e.stopPropagation();
         }
-        // COMPRAR CARRITO
-        
-        // comprar.addEventListener('click',function(){
-        // carrito={}
-        // pintarCarrito();
-        // document.querySelector('.total_prod').textContent=0; 
-        // })
-        
-
+    
 //! SCROLL DE MI CABECERA
 const cabezeraTop = document.querySelector(".navbar");
 
@@ -324,4 +313,3 @@ btnSwitch.addEventListener('click',()=>{
     document.body.classList.toggle('dark');
     btnSwitch.classList.toggle('active');
 })
-
